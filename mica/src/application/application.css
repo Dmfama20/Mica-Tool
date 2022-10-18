@@ -1,0 +1,22 @@
+.root {
+	/*-fx-background-color: linear-gradient(to Bottom left,#FF7F50, #6A5ACD); */
+	
+}
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.button {
+	-fx-background-color: #e2001a; 
+	-fx-background-radius:  5em;
+}
+
+.header {
+	-fx-background-color: #e2001a;
+}
+
+.body {
+	-fx-background-color: #ffffff;
+}
+
+.text-field {
+	-fx-background-color: f5f5f5;
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="516.0" prefWidth="603.0" styleClass="body" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <AnchorPane prefHeight="105.0" prefWidth="603.0" styleClass="header">
+         <children>
+            <Label layoutX="24.0" layoutY="14.0" text="Mica  ppt-to-h5p" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Label>
+            <Label layoutX="24.0" layoutY="53.0" text="Course presentation converter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="name" layoutX="317.0" layoutY="243.0" prefHeight="31.0" prefWidth="261.0" promptText="Name" />
+      <TextField fx:id="bilder" editable="false" layoutX="317.0" layoutY="282.0" prefHeight="31.0" prefWidth="261.0" promptText="Ordner hinzufügen" />
+      <TextField fx:id="speicher" editable="false" layoutX="317.0" layoutY="321.0" prefHeight="31.0" prefWidth="261.0" promptText="Speichern unter..." />
+      <Label layoutX="35.0" layoutY="381.0" text="Ausrichtung:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <HBox alignment="CENTER_RIGHT" layoutX="254.0" layoutY="373.0" prefHeight="42.0" prefWidth="324.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rbL" mnemonicParsing="false" text="Links">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgA" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbM" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Mitte" toggleGroup="$tgA">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="rbR" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" text="Rechts" toggleGroup="$tgA">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="rbV" layoutX="144.0" layoutY="10.0" mnemonicParsing="false" selected="true" text="Vollbild" toggleGroup="$tgA">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></RadioButton>
+         </children>
+      </HBox>
+      <Button layoutX="26.0" layoutY="282.0" mnemonicParsing="false" onAction="#getImageSrc" prefHeight="31.0" prefWidth="150.0" text="Bilder hinzufügen" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="26.0" layoutY="321.0" mnemonicParsing="false" onAction="#getTargetSrc" prefHeight="31.0" prefWidth="150.0" text="Speichern unter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="26.0" layoutY="423.0" mnemonicParsing="false" onAction="#createH5p" prefHeight="31.0" prefWidth="150.0" text="H5P erstellen" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="26.0" layoutY="465.0" mnemonicParsing="false" onAction="#beenden" prefHeight="31.0" prefWidth="150.0" text="Beenden" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Label layoutX="35.0" layoutY="243.0" prefHeight="31.0" prefWidth="116.0" text="Datei Name:">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <ProgressBar fx:id="pgBar" layoutX="307.0" layoutY="427.0" prefHeight="23.0" prefWidth="271.0" progress="0.0" />
+      <TextArea editable="false" layoutX="10.0" layoutY="117.0" prefHeight="111.0" prefWidth="580.0" text="Damit die Folieninhalte den H5P Bereich später vollständig ausfüllen, muss als Folienformat 16:9 eingestellt sein.&#10;Exportieren Sie die PowerPoint Folien im PNG Format. Verwenden Sie die Auflösung 1920x1080. PowerPoint speichert alle Folien als getrennte Dateien in dem Verzeichnis, welches ausgewählt wurde. Die Bezeichnung der Dateien darf nicht geändert werden." wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TextArea>
+      <ProgressIndicator fx:id="progIndi" layoutX="424.0" layoutY="455.0" progress="0.0" />
+      <Label fx:id="progLabel" alignment="CENTER" layoutX="360.0" layoutY="428.0" prefHeight="21.0" prefWidth="150.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
